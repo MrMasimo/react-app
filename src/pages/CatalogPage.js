@@ -1,14 +1,15 @@
-import Styles from './main.module.css';
-import Card from "../Card/Card";
-import Spinner from "../Spinner/Spinner";
-import {useFetch} from "../customHooks/useFetch";
+import Card from "../components/Card/Card";
+import Spinner from "../components/Spinner/Spinner";
+import {useFetch} from "../components/customHooks/useFetch";
 
-const Main = () => {
+const CatalogPage = () => {
     const [photos, isLoading] = useFetch('https://jsonplaceholder.typicode.com/albums/1/photos')
 
+
     return (
-        <main className={Styles.container}>
-            <div className={Styles.cards}>
+        <main className="container">
+            <h1>Каталог фотографий</h1>
+            <div className="cards">
                 {isLoading && <Spinner/>}
                 {
                     !isLoading && photos.length > 0 &&
@@ -24,4 +25,4 @@ const Main = () => {
     );
 }
 
-export default Main;
+export default CatalogPage;
