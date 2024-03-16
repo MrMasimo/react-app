@@ -1,17 +1,19 @@
 import Styles from './card.module.css';
 
 const Card = (props) => {
-    const onClick = () => {
-        props.openModal()
-        props.setTitle(props.title)
-    }
+    const {photo} = props
 
     return (
         <div className={Styles.card}>
-            <img src="https://placehold.co/300x400/white/black" alt=""/>
-            <h2>{props.title}</h2>
-            <p>{props.desc}</p>
-            <button onClick={onClick}>Подробнее...</button>
+            <div className={Styles.card__inner}>
+                <img
+                    src={photo.thumbnailUrl}
+                    alt={photo.thumbnailUrl}
+                    width={128}
+                    height={128}
+                />
+                <h5>{photo.title}</h5>
+            </div>
         </div>
     );
 }
