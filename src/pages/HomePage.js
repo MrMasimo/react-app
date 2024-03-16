@@ -1,8 +1,10 @@
+import {LoginForm} from "../components//Login/LoginForm";
 export const HomePage = () => {
     return (
-        <div className="container">
-            <h1>Я главная страница</h1>
-            <p>Перейдите в каталог</p>
+        <div>
+            <h1>Главная страница</h1>
+
+            <LoginForm/>
         </div>
     );
 }

@@ -9,11 +9,13 @@ function App() {
     return (
         <PhotosProvider>
             <BrowserRouter>
+            <div className='container'>
                 <Header/>
                 <Routes>
                     <Route path="/" element={<HomePage/>}/>
                     <Route path="/catalog" element={<CatalogPage/>}/>
                 </Routes>
+            </div>
             </BrowserRouter>
         </PhotosProvider>
     );

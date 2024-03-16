@@ -7,7 +7,7 @@ const CatalogPage = () => {
 
 
     return (
-        <main className="container">
+        <main>
             <h1>Каталог фотографий</h1>
             <div className="cards">
                 {isLoading && <Spinner/>}
