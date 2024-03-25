@@ -1,8 +1,14 @@
 import Styles from './card.module.css';
+import {deletePhotoById} from "../../store/photosSlice";
+import {useDispatch} from "react-redux";
+import {memo} from 'react'
 
 const Card = (props) => {
     const {photo} = props
-
+    const dispatch = useDispatch()
+    const deletePhotoByIdHandler = (id) => () => {
+        dispatch(deletePhotoById({id: id}))
+    }
     return (
         <div className={Styles.card}>
             <div className={Styles.card__inner}>
@@ -14,8 +20,9 @@ const Card = (props) => {
                 />
                 <h5>{photo.title}</h5>
             </div>
+            <button onClick={deletePhotoByIdHandler(photo.id)}>Удалить фото</button>
         </div>
     );
 }
 
-export default Card;
+export default memo(Card);
