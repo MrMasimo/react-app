@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    list: []
+    list: [],
+    isLoading: false
 }
 
 const photosSlice = createSlice({
@@ -15,8 +16,11 @@ const photosSlice = createSlice({
             const {id} = action.payload
             state.list = state.list.filter(photo => photo.id !== id)
         },
+        setIsLoading: (state, action) => {
+            state.isLoading = action.payload
+        },
     }
 })
 
-export const { addPhotos, deletePhotoById} = photosSlice.actions
+export const { addPhotos, deletePhotoById, setIsLoading} = photosSlice.actions
 export default photosSlice.reducer
