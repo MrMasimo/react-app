@@ -52,5 +52,9 @@ header {
   @extend .container;
   
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
+}
+
+main {
+  @extend .container;
 }
